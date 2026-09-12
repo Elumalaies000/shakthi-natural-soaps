@@ -738,3 +738,743 @@ document.getElementById("year")
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shakthi Natural Soaps</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,sans-serif;
+  background:#faf7ef;
+  color:#243528;
+  line-height:1.6;
+}
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:#fffaf0ee;
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid #e5dcc8;
+}
+.nav{
+  max-width:1100px;
+  margin:auto;
+  min-height:70px;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{
+  color:#245735;
+  font-weight:800;
+  font-size:18px;
+}
+.logo small{
+  display:block;
+  color:#b28a3b;
+  font-size:9px;
+  letter-spacing:2px;
+}
+nav{
+  display:flex;
+  gap:24px;
+}
+nav a{
+  text-decoration:none;
+  color:#304936;
+  font-size:14px;
+}
+.menu{
+  display:none;
+  border:0;
+  background:none;
+  font-size:27px;
+  color:#245735;
+}
+
+.hero{
+  min-height:85vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:60px 20px;
+  background:
+    radial-gradient(circle at 15% 20%,#dbead3,transparent 30%),
+    radial-gradient(circle at 85% 80%,#ead8ad,transparent 30%),
+    linear-gradient(135deg,#f9f4e5,#e8f0e2);
+}
+.hero-content{max-width:850px}
+.badge{
+  display:inline-block;
+  padding:8px 16px;
+  border:1px solid #cbbd98;
+  border-radius:30px;
+  color:#315d3c;
+  font-size:12px;
+  letter-spacing:1px;
+  margin-bottom:20px;
+}
+h1{
+  font-family:Georgia,serif;
+  color:#245735;
+  font-size:clamp(48px,10vw,90px);
+  line-height:1.05;
+}
+.hero p{
+  max-width:650px;
+  margin:25px auto;
+  color:#667067;
+  font-size:17px;
+}
+.buttons{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.btn{
+  display:inline-block;
+  padding:13px 22px;
+  border-radius:30px;
+  border:0;
+  cursor:pointer;
+  font-weight:bold;
+  text-decoration:none;
+}
+.primary{
+  background:#245735;
+  color:white;
+}
+.secondary{
+  background:white;
+  color:#245735;
+  border:1px solid #d9cfba;
+}
+section{padding:75px 20px}
+.container{
+  max-width:1100px;
+  margin:auto;
+}
+.heading{
+  text-align:center;
+  margin-bottom:40px;
+}
+.heading small{
+  color:#b28a3b;
+  letter-spacing:2px;
+  font-weight:bold;
+}
+.heading h2{
+  font-family:Georgia,serif;
+  color:#245735;
+  font-size:42px;
+  margin:8px 0;
+}
+.heading p{
+  color:#687269;
+  max-width:650px;
+  margin:auto;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+.card{
+  background:white;
+  border-radius:22px;
+  overflow:hidden;
+  border:1px solid #eee5d3;
+  box-shadow:0 8px 25px #344c3510;
+}
+.product-img{
+  height:220px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:75px;
+  background:linear-gradient(145deg,#e1eed8,#f7e9cc);
+}
+.card-body{padding:20px}
+.card h3{
+  color:#245735;
+  font-family:Georgia,serif;
+  font-size:22px;
+}
+.card p{
+  color:#687269;
+  font-size:14px;
+  margin:8px 0 15px;
+}
+.price{
+  color:#245735;
+  font-size:18px;
+  font-weight:bold;
+}
+.add{
+  width:100%;
+  margin-top:14px;
+}
+
+.about{
+  background:#edf3e8;
+}
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:45px;
+  align-items:center;
+}
+.about-image{
+  min-height:350px;
+  border-radius:30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:100px;
+  background:linear-gradient(135deg,#cddfc4,#ead9ae);
+}
+.about-text h2{
+  font-family:Georgia,serif;
+  color:#245735;
+  font-size:43px;
+}
+.about-text p{
+  color:#687269;
+  margin:15px 0;
+}
+.points{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:20px;
+}
+.point{
+  background:white;
+  padding:14px;
+  border-radius:14px;
+  font-weight:bold;
+}
+
+.ingredients{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+.ingredient{
+  text-align:center;
+  background:white;
+  padding:25px 15px;
+  border-radius:20px;
+  border:1px solid #eee5d3;
+}
+.icon{font-size:45px}
+.ingredient h3{color:#245735}
+.ingredient p{
+  color:#687269;
+  font-size:13px;
+  margin-top:5px;
+}
+
+.cta{
+  background:#245735;
+  color:white;
+  text-align:center;
+}
+.cta h2{
+  font-family:Georgia,serif;
+  font-size:42px;
+}
+.cta p{
+  max-width:600px;
+  margin:10px auto 25px;
+  color:#dce9dc;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+.contact-box{
+  background:white;
+  padding:28px;
+  border-radius:22px;
+  border:1px solid #eee5d3;
+}
+.contact-box h3{
+  color:#245735;
+  font-family:Georgia,serif;
+  font-size:25px;
+  margin-bottom:15px;
+}
+form{
+  display:grid;
+  gap:12px;
+}
+input,textarea{
+  width:100%;
+  padding:14px;
+  border:1px solid #ddd4c2;
+  border-radius:12px;
+  font:inherit;
+  background:#fffdf8;
+}
+textarea{
+  min-height:120px;
+}
+footer{
+  background:#173622;
+  color:#dce7da;
+  text-align:center;
+  padding:30px 20px;
+  font-size:13px;
+}
+
+.cart{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:200;
+  width:58px;
+  height:58px;
+  border:0;
+  border-radius:50%;
+  background:#c79b48;
+  font-size:24px;
+  cursor:pointer;
+  box-shadow:0 8px 25px #0003;
+}
+.cart-count{
+  position:absolute;
+  top:-4px;
+  right:-3px;
+  width:21px;
+  height:21px;
+  background:#b7352d;
+  color:white;
+  border-radius:50%;
+  font-size:11px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+@media(max-width:800px){
+  nav{
+    display:none;
+    position:absolute;
+    top:70px;
+    left:0;
+    right:0;
+    background:#fffaf0;
+    flex-direction:column;
+    padding:20px;
+    text-align:center;
+  }
+  nav.active{display:flex}
+  .menu{display:block}
+  .products{grid-template-columns:1fr 1fr}
+  .ingredients{grid-template-columns:1fr 1fr}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .products{grid-template-columns:1fr}
+  .ingredients{grid-template-columns:1fr 1fr}
+  .points{grid-template-columns:1fr}
+  .hero{min-height:78vh}
+  .heading h2,.about-text h2,.cta h2{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#home" class="logo">
+      SHAKTHI NATURAL SOAPS
+      <small>HANDMADE • PURE • NATURAL</small>
+    </a>
+
+    <button class="menu" onclick="toggleMenu()">☰</button>
+
+    <nav id="navigation">
+      <a href="#home">Home</a>
+      <a href="#products">Soaps</a>
+      <a href="#about">Our Story</a>
+      <a href="#ingredients">Ingredients</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+
+    <div class="badge">🌿 HANDCRAFTED WITH CARE</div>
+
+    <h1>
+      Pure Nature.<br>
+      Pure Care.
+    </h1>
+
+    <p>
+      Beautiful handmade soaps inspired by nature,
+      crafted in small batches for your everyday
+      bathing ritual.
+    </p>
+
+    <div class="buttons">
+      <a href="#products" class="btn primary">Explore Soaps</a>
+      <a href="#contact" class="btn secondary">Order Now</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="products">
+  <div class="container">
+
+    <div class="heading">
+      <small>OUR COLLECTION</small>
+      <h2>Natural Handmade Soaps</h2>
+      <p>
+        Discover our botanical-inspired handmade soap collection.
+      </p>
+    </div>
+
+    <div class="products">
+
+      <div class="card">
+        <div class="product-img">🌿</div>
+        <div class="card-body">
+          <h3>Neem & Tulsi</h3>
+          <p>Fresh and earthy botanical-inspired handmade soap.</p>
+          <div class="price">₹120</div>
+          <button class="btn primary add"
+            onclick="addSoap('Neem & Tulsi')">
+            Add to Enquiry
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="product-img">🌼</div>
+        <div class="card-body">
+          <h3>Turmeric Glow</h3>
+          <p>Warm golden botanical-inspired handmade soap.</p>
+          <div class="price">₹120</div>
+          <button class="btn primary add"
+            onclick="addSoap('Turmeric Glow')">
+            Add to Enquiry
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="product-img">🌹</div>
+        <div class="card-body">
+          <h3>Rose & Oat</h3>
+          <p>Soft floral-inspired soap for a refreshing ritual.</p>
+          <div class="price">₹140</div>
+          <button class="btn primary add"
+            onclick="addSoap('Rose & Oat')">
+            Add to Enquiry
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="product-img">🪵</div>
+        <div class="card-body">
+          <h3>Sandalwood</h3>
+          <p>Classic woody aroma inspired by Indian tradition.</p>
+          <div class="price">₹150</div>
+          <button class="btn primary add"
+            onclick="addSoap('Sandalwood')">
+            Add to Enquiry
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+
+    <div class="about-image">
+      🧼🌿
+    </div>
+
+    <div class="about-text">
+      <small style="color:#b28a3b;letter-spacing:2px;font-weight:bold">
+        OUR STORY
+      </small>
+
+      <h2>Made slowly.<br>Made with care.</h2>
+
+      <p>
+        Shakthi Natural Soaps is a handmade soap brand
+        inspired by the beauty and simplicity of nature.
+      </p>
+
+      <p>
+        We focus on thoughtfully selected ingredients,
+        beautiful handcrafted bars and small-batch production.
+      </p>
+
+      <div class="points">
+        <div class="point">🌱 Nature Inspired</div>
+        <div class="point">👐 Handmade</div>
+        <div class="point">✨ Small Batch</div>
+        <div class="point">🎁 Gift Friendly</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="ingredients">
+  <div class="container">
+
+    <div class="heading">
+      <small>FROM NATURE</small>
+      <h2>Featured Ingredients</h2>
+      <p>
+        Update these descriptions to match your actual soap formulations.
+      </p>
+    </div>
+
+    <div class="ingredients">
+
+      <div class="ingredient">
+        <div class="icon">🌿</div>
+        <h3>Neem</h3>
+        <p>Fresh botanical character.</p>
+      </div>
+
+      <div class="ingredient">
+        <div class="icon">🌼</div>
+        <h3>Turmeric</h3>
+        <p>Classic Indian botanical.</p>
+      </div>
+
+      <div class="ingredient">
+        <div class="icon">🌹</div>
+        <h3>Rose</h3>
+        <p>Timeless floral fragrance.</p>
+      </div>
+
+      <div class="ingredient">
+        <div class="icon">🪵</div>
+        <h3>Sandalwood</h3>
+        <p>Traditional woody aroma.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+
+    <small style="color:#d9bc78;letter-spacing:2px">
+      START YOUR NATURAL RITUAL
+    </small>
+
+    <h2>Ready to try Shakthi?</h2>
+
+    <p>
+      Choose your favourite soaps and send us an enquiry.
+    </p>
+
+    <a href="#contact" class="btn secondary">
+      Contact Us
+    </a>
+
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+
+    <div class="heading">
+      <small>GET IN TOUCH</small>
+      <h2>Order & Enquiries</h2>
+      <p>
+        Contact us for orders, bulk purchases and gifting.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-box">
+
+        <h3>Shakthi Natural Soaps</h3>
+
+        <p>📍 Tamil Nadu, India</p>
+        <p>📞 +91 7708782756</p>
+        <p>📧 hello@shakthinaturalsoaps.com</p>
+
+        <br>
+
+        <p style="color:#687269">
+          For bulk orders, gifting and reseller enquiries,
+          please contact us.
+        </p>
+
+      </div>
+
+      <div class="contact-box">
+
+        <h3>Send an Enquiry</h3>
+
+        <form onsubmit="sendWhatsApp(event)">
+
+          <input
+            id="name"
+            type="text"
+            placeholder="Your Name"
+            required
+          >
+
+          <input
+            id="phone"
+            type="tel"
+            placeholder="Phone / WhatsApp Number"
+            required
+          >
+
+          <textarea
+            id="message"
+            placeholder="Which soap are you interested in?"
+          ></textarea>
+
+          <button class="btn primary" type="submit">
+            Send on WhatsApp
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<button class="cart" onclick="openEnquiry()">
+  🛒
+  <span class="cart-count" id="cartCount">0</span>
+</button>
+
+<footer>
+  © <span id="year"></span> Shakthi Natural Soaps
+  • Handmade with care 🌿
+</footer>
+
+<script>
+
+let enquiryList = [];
+
+function toggleMenu(){
+  document.getElementById("navigation")
+  .classList.toggle("active");
+}
+
+document.querySelectorAll("nav a").forEach(function(link){
+  link.addEventListener("click",function(){
+    document.getElementById("navigation")
+    .classList.remove("active");
+  });
+});
+
+function addSoap(name){
+
+  enquiryList.push(name);
+
+  document.getElementById("cartCount")
+  .textContent = enquiryList.length;
+
+  alert(name + " added to your enquiry list.");
+}
+
+function openEnquiry(){
+
+  if(enquiryList.length === 0){
+
+    alert("Your enquiry list is empty.");
+
+    return;
+  }
+
+  let message =
+    "Hello Shakthi Natural Soaps!%0A%0A" +
+    "I am interested in:%0A" +
+    enquiryList.map(function(item){
+      return "• " + item;
+    }).join("%0A");
+
+  let whatsappNumber = "917708782756";
+
+  window.open(
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    message,
+    "_blank"
+  );
+}
+
+function sendWhatsApp(event){
+
+  event.preventDefault();
+
+  let name =
+    document.getElementById("name").value;
+
+  let phone =
+    document.getElementById("phone").value;
+
+  let message =
+    document.getElementById("message").value;
+
+  let whatsappNumber = "917708782756";
+
+  let text =
+    "Hello Shakthi Natural Soaps!%0A%0A" +
+    "Name: " + encodeURIComponent(name) +
+    "%0APhone: " + encodeURIComponent(phone) +
+    "%0AEnquiry: " +
+    encodeURIComponent(
+      message ||
+      "I would like to know more about your soaps."
+    );
+
+  window.open(
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    text,
+    "_blank"
+  );
+}
+
+document.getElementById("year")
+.textContent = new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
